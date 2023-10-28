@@ -1,12 +1,16 @@
-console.log("------------------------------------------------");
-console.log("O))     O)) O))))))) O)))))))        O))))");
-console.log("O))     O)) O))      O))    O))    O))    O))");
-console.log("O))     O)) O))      O))    O))  O))        O))");
-console.log("O)))))) O)) O))))))  O) O))      O))        O))");
-console.log("O))     O)) O))      O))  O))    O))        O))");
-console.log("O))     O)) O))      O))    O))    O))     O))");
-console.log("O))     O)) O))))))) O))      O))    O))))");
-console.log("------------------------------------------------");
+const { blue, green, red, bold, underline } = require('colorette');
+// Realizei pesquisa de uma biblioteca para lidar com cores via Prompt, encontrei essa (colorette) # https://chore-update--yarnpkg.netlify.app/pt-BR/package/colorette
+
+console.log(blue("------------------------------------------------"));
+console.log(red("##::::'##:'########:'########:::'#######::"));
+console.log(red("##:::: ##: ##.....:: ##.... ##:'##.... ##:"));
+console.log(red("##:::: ##: ##::::::: ##:::: ##: ##:::: ##:"));
+console.log(red("#########: ######::: ########:: ##:::: ##:"));
+console.log(red("##.... ##: ##...:::: ##.. ##::: ##:::: ##:"));
+console.log(red("##:::: ##: ##::::::: ##::. ##:: ##:::: ##"));
+console.log(red("##:::: ##: ########: ##:::. ##:. #######::"));
+console.log(red("..:::::..::........::..:::::..:::.......:::"));
+console.log(blue("------------------------------------------------"));
                                     
 const prompt = require('prompt-sync')();
 // Realizei pesquisa de uma biblioteca para lidar com entradas via Prompt, encontrei essa (prompt-sync) # https://www.npmjs.com/package/prompt-sync
@@ -32,7 +36,7 @@ switch (true) {
     nivel = "Prata";
     break;
   case hero.xp >= 5001 && hero.xp <= 6000:
-    nivel = "Erro do Professor ;)";
+    nivel = "Você digitou um XP, que está em um intervalo ignorado pelo Professor ;)";
     break;
   case hero.xp >= 6001 && hero.xp <= 7000:
     nivel = "Ouro";
@@ -51,4 +55,6 @@ switch (true) {
     break;
 }
 
-console.log(`O XP do ${hero.nome} é ${hero.xp}, portanto seu personagem é nível ${nivel}.`);
+console.log(blue("------------------------------------------------------------------------------------------------------------------------------"));
+console.log(green(`O XP do -->> ${bold(red(hero.nome))} <<-- é: ${bold(red(hero.xp))}, portanto seu personagem é Nível: --> ${bold(red(nivel))}.`));
+console.log(blue("------------------------------------------------------------------------------------------------------------------------------"));
